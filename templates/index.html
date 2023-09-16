@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos</title>
+</head>
+<body>
+    <h1>Tarea en Lista</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tareas</th>
+                <th>Estados</th>
+                <th>Marcador de Tareas</th>
+                <th>Eliminar Tareas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>
+                        <form method="POST" action="/marcador/{{ row[0] }}">
+                            <button type="submit">Marcar como Completada</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="/eliminar_tarea/{{ row[0] }}">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/agregar">Agregar Nuevas tareas</a>
+</body>
+</html>

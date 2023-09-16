@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Tarea</title>
+</head>
+<body>
+    <h1>Agregar Nueva Tarea</h1>
+    
+    <form method="POST" action="/agregar">
+        <label for="descripcion">Descripción:</label>
+        <input type="text" name="descripcion" required>
+        <br>
+        <label for="estado">Estado:</label>
+        <select name="estado" required>
+            <option value="Completada">Completada</option>
+            <option value="No Completada">No Completada</option>
+        </select>
+        <br>
+        <button type="submit">Agregar Tarea</button>
+    </form>
+
+    <a href="/">Regresar</a>
+</body>
+</html>
